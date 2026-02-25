@@ -24,6 +24,23 @@ namespace COMP003A.LectureActivity7
 			{
 				Console.WriteLine(name);
 			}
+
+			for (int i = 0; i < names.Count; i++)
+			{
+				Console.WriteLine(names[i]);
+			}
+
+			Console.Write("Please Enter a Number 1-3: ");
+			string chosenNumber = Console.ReadLine();
+
+			if (chosenNumber == "1" || chosenNumber == "2" || chosenNumber == "3")
+			{
+				Console.WriteLine("Success");
+			}
+			else 
+			{
+				Console.WriteLine("Error");
+			}
 		}
 	}
 }
