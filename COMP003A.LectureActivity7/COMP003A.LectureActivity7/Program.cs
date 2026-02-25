@@ -6,7 +6,8 @@ namespace COMP003A.LectureActivity7
 	{ 
 		static void Main(string[] args)
 		{
-			
+			/* Invalid validation is generally preferred over try-catch because it prevents errors and handles expected conditions.
+			 * This makes it more predictable, having it easier to debug and maintain.*/
 			int[] scores = {9, 23, 36, 42, 59 };
 
 			for (int i = 0; i < scores.Length; i++)
@@ -31,16 +32,18 @@ namespace COMP003A.LectureActivity7
 			}
 
 			Console.Write("Please Enter a Number 1-3: ");
-			string chosenNumber = Console.ReadLine();
-
-			if (chosenNumber == "1" || chosenNumber == "2" || chosenNumber == "3")
+			/* Try-catch is still necessary in some cases because it handles the unexpected values when user input is asked.
+			 * This command should be used to hold unvalidated outcomes in advance.*/
+			try 
 			{
-				Console.WriteLine("Success");
+				int changedNumber = int.Parse(Console.ReadLine());
+				Console.WriteLine(changedNumber);
 			}
-			else 
-			{
-				Console.WriteLine("Error");
+			catch (FormatException)
+			{ 
+				Console.WriteLine("Invalid number entered.");
 			}
 		}
-	}
+	} /* Debugging helped me understand these concepts of loop behavior because it showed me the precise excecution flow of loops.
+	   * By stepping into the code, you can see and confirm when loop conditions are met or left, ensuring that the program works.*/
 }
